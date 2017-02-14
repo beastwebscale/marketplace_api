@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 describe Api::V1::UsersController do
-  before(:each) {request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime[:json]}"}
-  before(:each) { request.headers['Content-Type'] = Mime[:json].to_s }
 
   describe "GET#show" do
     before(:each) do
@@ -19,7 +17,6 @@ describe Api::V1::UsersController do
   end
 
   describe "POST #create" do
-
     context "when is successfully created" do
       before(:each) do
         @user_attributes = FactoryGirl.attributes_for :user
@@ -55,7 +52,6 @@ describe Api::V1::UsersController do
   end
 
   describe "PUT/PATCH #update" do
-
     context "when is successfully updated" do
       before(:each) do
         @user = FactoryGirl.create :user
